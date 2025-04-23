@@ -1,15 +1,29 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="container flex justify-between items-center py-4">
-        <a href="#" className="text-xl font-bold text-primary-600">
-          Marcus Hudnell
-        </a>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 
+        ${isScrolled ? "bg-white/60 backdrop-blur-sm" : "bg-primary-900/96"}`}
+    >
+      <div className="container flex items-right py-4 w-full items-right">
         {/* Mobile menu button */}
         <button
           className="md:hidden focus:outline-none"
@@ -21,8 +35,14 @@ const Header = () => {
             <Bars3Icon className="h-6 w-6" />
           )}
         </button>
+
+        <div className="flex-grow"></div>
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-10">
+        <nav
+          className={`hidden md:flex md:mr-[-2] space-x-10 transition-colors
+            ${isScrolled ? "text-primary-800" : "text-white"}
+            }`}
+        >
           <a href="#about" className="font-medium hover:text-primary-600">
             About
           </a>
@@ -43,29 +63,31 @@ const Header = () => {
             <div className="flex flex-col px-4 pt-2 pb-4 space-y-1 bg-white">
               <a
                 href="#about"
-                className="block px-3 py-2 rounded-md hover:bg-gray-100"
-                onClick={() => setIsOpen(false)}
+                className={`font-medium transition-colors ${
+                  isScrolled
+                    ? "hover:text-primary-600"
+                    : "hover:text-primary-200"
+                }`}
               >
                 About
               </a>
               <a
                 href="#projects"
-                className="block px-3 py-2 rounded-md hover:bg-gray-100"
-                onClick={() => setIsOpen(false)}
+                className={`font-medium transition-colors ${
+                  isScrolled
+                    ? "hover:text-primary-600"
+                    : "hover:text-primary-200"
+                }`}
               >
                 Projects
               </a>
               <a
-                href="#skills"
-                className="block px-3 py-2 rounded-md hover:bg-gray-100"
-                onClick={() => setIsOpen(false)}
-              >
-                Skills
-              </a>
-              <a
                 href="#contact"
-                className="block px-3 py-2 rounded-md hover:bg-gray-100"
-                onClick={() => setIsOpen(false)}
+                className={`font-medium transition-colors ${
+                  isScrolled
+                    ? "hover:text-primary-600"
+                    : "hover:text-primary-200"
+                }`}
               >
                 Contact
               </a>
