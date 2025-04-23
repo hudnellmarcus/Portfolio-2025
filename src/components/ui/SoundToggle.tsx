@@ -6,7 +6,7 @@ interface SoundToggleProps {
 }
 
 const SoundToggle = ({
-    soundFile = '/ocean-waves.mp3',
+    soundFile = './ocean-waves.mp3',
     className=''
 } : 
     SoundToggleProps) => {
