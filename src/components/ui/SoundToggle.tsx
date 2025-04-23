@@ -13,7 +13,7 @@ const SoundToggle = ({ className = '' }: SoundToggleProps) => {
   
   // Get the EXACT GitHub Pages URL of your audio file
   // Replace this with your actual GitHub username and repository name
-  const audioUrl = "https://github.com/hudnellmarcus/Portfolio-2025/blob/gh-pages/ocean-waves.mp3";
+  const audioUrl = "https://hudnellmarcus.github.io/Portfolio-2025/public/ocean-waves.mp3";
   
   // Log the complete URL for debugging
   useEffect(() => {
