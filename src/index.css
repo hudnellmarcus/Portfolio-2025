@@ -13,6 +13,84 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Custom animations (in case tailwind.config.js changes aren't applied) */
+@keyframes gentleWave {
+  0% { 
+    transform: translateY(0) translateX(0); 
+  }
+  25% { 
+    transform: translateY(-5px) translateX(2px); 
+  }
+  50% { 
+    transform: translateY(0) translateX(0); 
+  }
+  75% { 
+    transform: translateY(5px) translateX(-2px); 
+  }
+  100% { 
+    transform: translateY(0) translateX(0); 
+  }
+}
+
+.animate-gentle-wave {
+  animation: gentleWave 8s ease-in-out infinite;
+}
+
+.animate-gentle-wave-slow {
+  animation: gentleWave 12s ease-in-out infinite;
+}
+
+.animate-gentle-wave-slower {
+  animation: gentleWave 16s ease-in-out infinite;
+}
+
+/* For more subtle vertical bouncing only */
+@keyframes subtleBounce {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-4px); 
+  }
+}
+
+.animate-subtle-bounce {
+  animation: subtleBounce 8s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-8px); 
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes wave {
+  0%, 100% { 
+    transform: translateY(0); 
+  }
+  50% { 
+    transform: translateY(-10px); 
+  }
+}
+
+.animate-gentle-float {
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+.animate-wave {
+  animation: wave 8s ease-in-out infinite;
+}
+
+.animate-wave-slow {
+  animation: wave 12s ease-in-out infinite;
+}
+
 
 @layer components {
   .container {
