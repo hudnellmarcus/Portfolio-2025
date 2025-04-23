@@ -6,18 +6,47 @@ interface SoundToggleProps {
 }
 
 const SoundToggle = ({
-    soundFile = './ocean-waves.mp3',
     className=''
 } : 
     SoundToggleProps) => {
     const [isPlaying, setIsPlaying] = useState(false);
     const [volume, setVolume] = useState(0.4);
     const audioRef = useRef<HTMLAudioElement | null>(null);
+    {/* debugging audio issue */}
+    const [error, setError] = useState<string | null>(null);
+
+    const audioUrl = "https://github.com/hudnellmarcus/Portfolio-2025/blob/gh-pages/ocean-waves.mp3";
 
     useEffect(() => {
-        audioRef.current = new Audio(soundFile);
-        audioRef.current.loop = true;
-        audioRef.current.volume = volume;
+        console.log("audio URL:", audioUrl)
+    }, []);
+
+    useEffect(() => {
+        try {
+            const audio = new Audio(audioUrl);
+
+            audio.addEventListener('error', (error) => {
+            const errorEvent = error as ErrorEvent;
+            console.log('Audio error:', errorEvent);
+                setError(`Error loading audio file: ${errorEvent.message || error.type}`);
+            });
+
+            audio.addEventListener('canplaythrough', () => {
+                console.log('Audio can play through');
+                setError(null);
+            })
+            audio.loop = true;
+            audio.volume = volume; 
+
+            audioRef.current = audio;
+
+            audio.load(); 
+
+            console.log('Audio element created and loaded');
+            } catch (err) {
+            console.error('Error setting up audio:', err);
+            setError(`Error setting up audio: ${err}`);
+        }     
 
         return () => {
             if (audioRef.current) {
@@ -25,7 +54,7 @@ const SoundToggle = ({
                 audioRef.current = null;
             }
         };
-    }, [soundFile]);
+    }, []);
 
     useEffect(() => {
         if (audioRef.current) {
@@ -34,7 +63,10 @@ const SoundToggle = ({
     }, [volume]);
 
     const toggleSound = () => {
-        if (!audioRef.current) return;
+        if (!audioRef.current) {
+            setError('Audio not initialized');
+            return;
+        }
 
         if (isPlaying) {
             audioRef.current.pause();  
