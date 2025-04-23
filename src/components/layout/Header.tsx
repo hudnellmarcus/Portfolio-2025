@@ -43,7 +43,7 @@ const Header = () => {
             ${isScrolled ? "text-primary-800" : "text-white"}
             }`}
         >
-          <a href="#about" className="font-medium hover:text-primary-600">
+          <a href="#about-section" className="font-medium hover:text-primary-600">
             About
           </a>
           <a href="#projects" className="font-medium hover:text-primary-600">
