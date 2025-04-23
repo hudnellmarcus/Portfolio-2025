@@ -12,7 +12,7 @@ function App() {
         <About />
       </Layout>
 
-      <SoundToggle soundFile="/ocean-waves.mp3" />
+      <SoundToggle  />
     </>
   );
 }
