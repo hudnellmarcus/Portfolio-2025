@@ -33,13 +33,16 @@ const AnimatedBackground = () => {
     // create particles
     const initParticles = () => {
       particles = [];
-      const particleCount = Math.floor((canvas.width * canvas.height) / 25000);
+      const particleCount = Math.floor((canvas.width * canvas.height) / 12000);
 
       const colors = [
         "#0ea5e9", // Sky blue
         "#0891b2", // Teal
         "#075985", // Deep blue
         "#0c4a6e", // Navy
+        "#38bdf8", // Bright blue
+        "#67e8f9", // Cyan
+        "#22d3ee", // Turquoise
         "#e0f2fe", // Light blue
       ];
 
@@ -47,11 +50,11 @@ const AnimatedBackground = () => {
         particles.push({
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
-          size: Math.random() * 2 + 0.7,
+          size: Math.random() * 3 + 0.8,
           speedX: (Math.random() - 0.5) * 0.4,
           speedY: (Math.random() - 0.5) * 0.2,
           color: colors[Math.floor(Math.random() * colors.length)],
-          opacity: Math.random() * 0.2 + 0.5,
+          opacity: Math.random() * 0.3 + 0.6,
         });
       }
     };
@@ -114,16 +117,16 @@ const AnimatedBackground = () => {
 
             gradient.addColorStop(
               0,
-              `rgba(6, 182, 212, ${0.03 * (1 - distance / maxDistance)})`
+              `rgba(6, 182, 212, ${0.08 * (1 - distance / maxDistance)})`
             );
             gradient.addColorStop(
               1,
-              `rgba(14, 165, 233, ${0.03 * (1 - distance / maxDistance)})`
+              `rgba(14, 165, 233, ${0.08 * (1 - distance / maxDistance)})`
             );
 
             ctx.beginPath();
             ctx.strokeStyle = gradient;
-            ctx.lineWidth = 0.5;
+            ctx.lineWidth = 0.75;
 
             // Create curved lines for more fluid appearance
             const midX = (particles[i].x + particles[j].x) / 2;
@@ -158,7 +161,7 @@ const AnimatedBackground = () => {
   }, []);
 
   return (
-    <canvas ref={canvasRef} className="absolute inset-0 -z-10 opacity-40" />
+    <canvas ref={canvasRef} className="absolute inset-0 -z-10 opacity-60" />
   );
 };
 
