@@ -39,7 +39,7 @@ const Header = () => {
         <div className="flex-grow"></div>
         {/* Desktop Navigation */}
         <nav
-          className={`hidden md:flex md:mr-[-2] space-x-10 transition-colors
+          className={`hidden md:flex space-x-10 transition-colors
             ${isScrolled ? "text-primary-800" : "text-white"}
             }`}
         >
