@@ -32,10 +32,10 @@ const About = () => {
       <AnimatedBackground />
 
       <div className="container relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-primary-800">
+       {/*} <h2 className="text-3xl md:text-4xl font-bold text-center mb-16 text-primary-800">
           {aboutContent.headline}
-        </h2>
-        <div className="flex flex-col">
+        </h2> */}
+        <div className="flex flex-col"> 
           {/* Left column text */}
           <div
             className={`transition-all duration-700 ${

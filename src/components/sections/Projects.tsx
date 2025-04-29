@@ -114,9 +114,6 @@ const Projects = () => {
                       <h3 className="text-3xl md:text-4xl font-bold text-white text-center p-4 md:p-6 backdrop-blur-sm bg-primary-900/30 rounded-lg">
                         {project.title}
                       </h3>
-                      <span className="text-primary-100 mt-2 font-light">
-                        {project.duration}
-                      </span>
                     </div>
                   </div>
                 </div>

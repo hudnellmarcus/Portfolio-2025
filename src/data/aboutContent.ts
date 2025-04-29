@@ -1,10 +1,10 @@
 const aboutContent = {
     headline: "Navigating Digital Depths",
-    intro: `I'm Marcus Hudnell, a Full-Stack Software Engineer based in Los Angeles, focused on creating scalable web applications and reusable component libraries. Like the ocean, my approach to development runs deep — emphasizing clean architecture, maintainable code, and thoughtful user experiences.`,
+    intro: `I'm Marcus Hudnell, a Full-Stack Software Engineer based in Los Angeles, focused on creating scalable and engaging web applications. Like the ocean, my approach to development runs deep — emphasizing clean architecture, maintainable code, and thoughtful user experiences.`,
 
     philosophy: `My development philosophy centers on building solutions that are both technically sound and aligned with real-world needs.`,
 
-    background: `I've worked with companies like IAM21, Simpson Street, and Liquid, developing web applications that empower teams and enhance user experiences.`,
+    background: `I've worked with companies like IAM21, Simpson Street, and LIQUID Rewards, developing web applications that empower teams and enhance user experiences.`,
 
     expertise: {
         title: "Technical Expertise",

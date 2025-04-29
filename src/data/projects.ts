@@ -22,7 +22,7 @@ export interface ProjectData {
         id: 1,
         title: "IAM21 Productions",
         description: "Complex web application using Webflow CMS with advanced animations and interactive experiences.",
-    role: "Frontend Developer (Contract)",
+    role: "Frontend Developer",
     duration: "November 2024 - Present",
     image: iam21Cover, 
     technologies: ["Webflow", "JavaScript", "jQuery", "CSS", "CMS"],
@@ -40,7 +40,7 @@ export interface ProjectData {
   {
     id: 2,
     title: "Simpson St.",
-    description: "Reusable UI component library built with React and TailwindCSS to improve development efficiency across teams.",
+    description: "Front-End site converting brand design into a pixel-perfect responsive website with GoDaddy integration. Containing custom components reflecting brand guidelines across all breakpoints.",
     role: "Frontend Developer",
     duration: "January 2024 — June 2024",
     image: simpsonCover, 
@@ -58,8 +58,8 @@ export interface ProjectData {
   },
   {
     id: 3,
-    title: "Liquid",
-    description: "Modular React components following enterprise architecture patterns with robust data management.",
+    title: "LIQUID Rewards",
+    description: "Functional authentication system and user dashboard simulating financial workflows. Engineered JavaScript solutions for API simulation and data visualization.",
     role: "Frontend Developer",
     duration: "November 2023 — January 2024",
     image: liquidCover, 
