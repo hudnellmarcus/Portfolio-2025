@@ -39,7 +39,6 @@ const Hero = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-primary-900/30 via-transparent to-primary-900/60 z-10"></div>
 
       {/* wave elements */}
-      {/*
       <div
         className="absolute text-white text-opacity-10 text-8xl font-serif z-20 select-none overflow-hidden"
         style={{
@@ -74,7 +73,6 @@ const Hero = () => {
       >
         ~
       </div>
-      */}
 
       <div className="relative z-30 text-center px-4 animate-gentle-float">
         <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">
