@@ -49,8 +49,8 @@ const Header = () => {
           <a href="#projects" className="font-medium hover:text-primary-600">
             Projects
           </a>
-          <a href="#skills" className="font-medium hover:text-primary-600">
-            Skills
+          <a href="/resume.pdf" download="Marcus_Hudnell_Resume.pdf" className="font-medium hover:text-primary-600">
+            Resume
           </a>
           <a href="#contact" className="font-medium hover:text-primary-600">
             Contact
