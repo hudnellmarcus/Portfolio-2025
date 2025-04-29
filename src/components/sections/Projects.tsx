@@ -55,7 +55,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="py-20 relative min-h-screen bg-gradient-to-b from-primary-100 to-white/10"
+      className="relative min-h-screen bg-gradient-to-b from-primary-100 to-white/10"
       ref={containerRef}
     >
       <div
@@ -75,9 +75,9 @@ const Projects = () => {
       </div>
       */}
 
-      <div className="relative z-10 bg-gradient-to-b from-primary-100/80 via-white/90 to-white py-20">
-        <div className="container mb-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16 text-primary-800">
+      <div className="relative z-10 bg-gradient-to-b min-h-screen from-primary-100/80 via-white/90 to-white/30">
+        <div className="container py-8">
+          <h2 className="text-4xl md:text-5xl font-bold text-center text-primary-800">
             Featured Projects
           </h2>
         </div>
