@@ -67,8 +67,8 @@ export interface ProjectData {
     liveUrl: "https://hudnellmarcus.github.io/liquid-demo/",
     githubUrl: "https://github.com/hudnellmarcus/liquid-demo",
     features: [
-      "Modular React components",
-      "Technical documentation",
+      "Functional authentication system and user dashboard simulating real-world financial workflows",
+      "Enterprise-level state management patterns ready for production integration",
       "RESTful API integration",
       "Error handling implementation"
     ],

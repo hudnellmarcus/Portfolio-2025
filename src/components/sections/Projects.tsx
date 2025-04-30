@@ -217,7 +217,7 @@ const Projects = () => {
         </div>
 
         {/* Arrow navigation */}
-        <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 flex justify-between pointer-events-none px-4 md:px-8">
+        <div className="absolute top-1/2 left-0 right-0 -translate-y-1/2 flex justify-between pointer-events-none px-4 md:px-4">
           <button
             onClick={() => setActiveProject((prev) => Math.max(prev - 1, 0))}
             className={`p-2 rounded-full bg-white/80 backdrop-blur-sm shadow-lg pointer-events-auto transition-opacity ${
