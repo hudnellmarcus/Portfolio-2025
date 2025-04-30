@@ -48,7 +48,7 @@ const Hero = () => {
             className="text-2xl md:text-3xl text-primary-200 font-medium"
           />
         </div>
-        <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto">
+        <p className="text-xl text-white md:text-white/90 mb-10 max-w-2xl mx-auto">
           I'm a passionate web developer with a love for creating beautiful and
           engaging web experiences. I specialize in building responsive and
           user-friendly websites using modern technologies.
