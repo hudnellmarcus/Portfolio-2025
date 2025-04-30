@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import projects from "../../data/projects";
 import bgImage from "../../assets/hero-bg.jpg";
+import { useAnalyticsTracking } from "../../hooks/useAnalyticsTracking";
 
 const Projects = () => {
   const [activeProject, setActiveProject] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
   const [featuresExpanded, setFeaturesExpanded] = useState(false);
+  const { trackLiveSiteClick, trackGithubClick } = useAnalyticsTracking();
 
   useEffect(() => {
     setFeaturesExpanded(false);
@@ -70,19 +72,6 @@ const Projects = () => {
         className="sticky top-0 w-full h-screen bg-cover bg-center -z-20"
         style={{ backgroundImage: `url(${bgImage})` }}
       ></div>
-      {/* animated background 
-      <div className="absolute inset-0 overflow-hidden -z-10 opacity-20 pointer-events-none">
-        <div
-          className="absolute inset-0 pointer-events-none animate-wave"
-          style={{
-            backgroundImage: `radial-gradient(ellipse at center, rgba(6, 182, 212, 0.5) 0%, rgba(14, 165, 233, 0.3) 50%, rgba(0, 0, 0, 0) 80%)`,
-            backgroundSize: "150% 150%",
-            backgroundPosition: "center",
-          }}
-        ></div>
-      </div>
-      */}
-
       <div
         id="projects"
         className="overflow-hidden relative z-10 bg-gradient-to-b min-h-screen from-primary-100/80 via-white/90 to-white/30"
@@ -220,6 +209,7 @@ const Projects = () => {
                         {project.liveUrl && (
                           <a
                             href={project.liveUrl}
+                            onClick={() => trackLiveSiteClick(project.title, project.liveUrl!)}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="bg-primary-600 hover:bg-primary-700 text-white px-6 py-3 rounded-lg font-medium transition duration-300 text-center"
@@ -232,6 +222,7 @@ const Projects = () => {
                             href={project.githubUrl}
                             target="_blank"
                             rel="noopener noreferrer"
+                            onClick={() => trackGithubClick(project.title, project.githubUrl!)}
                             className="bg-gray-800 hover:bg-gray-900 text-white px-6 py-3 rounded-lg font-medium transition duration-300 text-center"
                           >
                             View on GitHub
