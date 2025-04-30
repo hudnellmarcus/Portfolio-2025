@@ -6,6 +6,15 @@ const Projects = () => {
   const [activeProject, setActiveProject] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [featuresExpanded, setFeaturesExpanded] = useState(false);
+
+  useEffect(() => {
+    setFeaturesExpanded(false);
+  }, [activeProject]);
+
+  const toggleFeatures = () => {
+    setFeaturesExpanded(!featuresExpanded);
+  };
 
   // visibility detection
   useEffect(() => {
@@ -75,8 +84,9 @@ const Projects = () => {
       */}
 
       <div
-        id="projects" 
-        className="relative border border-black z-10 bg-gradient-to-b min-h-screen from-primary-100/80 via-white/90 to-white/30">
+        id="projects"
+        className="overflow-hidden relative z-10 bg-gradient-to-b min-h-screen from-primary-100/80 via-white/90 to-white/30"
+      >
         <div className="container py-2">
           <h2 className="mt-8 text-3xl md:text-4xl lg:text-5xl font-bold text-center text-primary-800">
             Featured Projects
@@ -85,7 +95,7 @@ const Projects = () => {
 
         {/* Individual Projects */}
         <div
-          className={`relative h-[80vh] overflow-hidden transition-opacity duration-100 ${
+          className={`relative h-[80vh] overflow-x-hidden transition-opacity duration-100 ${
             isVisible ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -144,9 +154,44 @@ const Projects = () => {
                       </div>
 
                       <div className="mb-6">
-                        <h4 className="text-xl font-bold text-primary-700 mb-3">
-                          Key Features
-                        </h4>
+                        <div className="flex items-center justify-between mb-3">
+                          <h4 className="text-xl font-bold text-primary-700">
+                            Key Features
+                          </h4>
+                          <button
+                            onClick={toggleFeatures}
+                            className="md:hidden flex items-center justify-centerp-2 bg-primary-100 hover:bg-primary-200 rounded-lg transition-colors"
+                            aria-expanded={featuresExpanded}
+                            aria-controls={`features-${project.id}`}
+                          >
+                            <span className="sr-only">
+                              {featuresExpanded ? "Hide" : "Show"} Features
+                            </span>
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              className={`h-5 w-5 text-primary-700 transition-transform duration-300 ${
+                                featuresExpanded ? "rotate-180" : ""
+                              }`}
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke="currentColor"
+                            >
+                              <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M19 9l-7 7-7-7"
+                              />
+                            </svg>
+                          </button>
+                        </div>
+                        <div 
+                          id={`features-${project.id}`}
+                          className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                            featuresExpanded || window.innerWidth >= 768 
+                            ? "max-h-96 opacity-100" : "max-h-0 opacity-0 md:max-h-96 md:opacity-100"
+                          }`}
+                        >
                         <ul className="space-y-2">
                           {project.features.map((feature, index) => (
                             <li key={index} className="flex items-start">
@@ -170,7 +215,7 @@ const Projects = () => {
                           ))}
                         </ul>
                       </div>
-
+                          </div>
                       <div className="flex flex-col sm:flex-row gap-4">
                         {project.liveUrl && (
                           <a
