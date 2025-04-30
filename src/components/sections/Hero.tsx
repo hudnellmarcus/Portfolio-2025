@@ -38,43 +38,6 @@ const Hero = () => {
       {/* overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-primary-900/30 via-transparent to-primary-900/60 z-10"></div>
 
-      {/* wave elements */}
-      {/*}
-      <div
-        className="absolute text-white text-opacity-10 text-8xl font-serif z-20 select-none overflow-hidden"
-        style={{
-          top: "20%",
-          left: "5%",
-          transform: `translateY(${offset * -0.2}px)`,
-          animation: "wave 12s ease-in-out infinite",
-        }}
-      >
-        ~
-      </div>
-      <div
-        className="absolute text-white text-opacity-10 text-8xl font-serif z-20 select-none overflow-hidden"
-        style={{
-          right: "10%",
-          bottom: "25%",
-          transform: `translateY(${offset * -0.3}px)`,
-          animation: "wave-slow 15s ease-in-out infinite",
-        }}
-      >
-        ~
-      </div>
-
-      <div
-        className="absolute text-white text-opacity-5 text-9xl font-serif z-20 select-none overflow-hidden"
-        style={{
-          right: "20%",
-          top: "30%",
-          transform: `translateY(${offset * -0.1}px)`,
-          animation: "wave 18s ease-in-out infinite",
-        }}
-      >
-        ~
-      </div> */ }
-
       <div className="relative z-30 text-center px-4 animate-gentle-float">
         <h1 className="text-5xl md:text-7xl font-bold mb-4 text-white">
           Marcus Hudnell
@@ -93,7 +56,7 @@ const Hero = () => {
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a
             href="#projects"
-            className="bg-primary-600/80 hover:bg-primary-700/90 tet-white px-8 py-3 rounded-full font-medium transition duration-300 backdrop-blur-sm"
+            className="bg-primary-600/80 hover:bg-primary-700/90 text-white px-8 py-3 rounded-full font-medium transition duration-300 backdrop-blur-sm"
           >
             Explore My Work
           </a>
@@ -107,7 +70,7 @@ const Hero = () => {
       </div>
 
       {/* scroll indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
+      <div className="absolute flex bottom-0 md:bottom-10 md:left-1/2 transform -translate-x-1/2 z-30 animate-bounce">
         <svg
           width="40"
           height="40"

@@ -76,9 +76,9 @@ const Projects = () => {
 
       <div
         id="projects" 
-        className="relative z-10 bg-gradient-to-b min-h-screen from-primary-100/80 via-white/90 to-white/30">
-        <div className="container py-8">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-primary-800">
+        className="relative border border-black z-10 bg-gradient-to-b min-h-screen from-primary-100/80 via-white/90 to-white/30">
+        <div className="container py-2">
+          <h2 className="mt-8 text-3xl md:text-4xl lg:text-5xl font-bold text-center text-primary-800">
             Featured Projects
           </h2>
         </div>
@@ -100,19 +100,19 @@ const Projects = () => {
                 key={project.id}
                 className="min-w-full h-full flex flex-col md:flex-row items-center p-4 md:p-8"
               >
-                {/* image */}
+                {/* image and title  */}
                 <div className="w-full md:w-1/2 h-[40vh] md:h-full p-4 md:p-8 flex flex-col items-center justify-center">
-                  <div className="w-full h-full rounded-xl overflow-hidden shadow-2xl transform transition-transform hover:scale-105">
+                  <div className="w-full h-[80%] md:h-full rounded-xl overflow-hidden shadow-2xl transform transition-transform hover:scale-105">
                     <div className="w-full h-full bg-primary-700/20 flex flex-col items-center justify-center p-6">
                       <img
                         src={project.image}
                         alt={project.title}
-                        className="w-full h-full object-contain rounded-lg"
+                        className="hidden md:block w-full h-full object-contain rounded-lg"
                       />
                       <span className="text-primary-100 mb-2 text-lg font-medium">
                         {project.role}
                       </span>
-                      <h3 className="text-3xl md:text-4xl font-bold text-white text-center p-4 md:p-6 backdrop-blur-sm bg-primary-900/30 rounded-lg">
+                      <h3 className="text-2xl md:text-3xl font-bold text-white text-center p-4 md:p-6 backdrop-blur-sm bg-primary-900/30 rounded-lg">
                         {project.title}
                       </h3>
                     </div>
@@ -135,7 +135,7 @@ const Projects = () => {
                           {project.technologies.map((tech, index) => (
                             <span
                               key={index}
-                              className="px-4 py-2 bg-primary-100 text-primary-800 rounded-full"
+                              className="px-4 py-2 text-sm md:text-base bg-primary-100 text-primary-800 rounded-full"
                             >
                               {tech}
                             </span>
