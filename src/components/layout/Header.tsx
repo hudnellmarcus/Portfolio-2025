@@ -1,9 +1,28 @@
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
-import { useEffect, useState } from "react";
+import { useEffect, useState, MouseEvent } from "react";
+import ReactGA from "react-ga4";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+
+  const handleAnchorClick = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const targetId = e.currentTarget.getAttribute("href")?.substring(1);
+
+    if (targetId) {
+      ReactGA.event({
+        category: "Navigation",
+        action: "Navigate to Section",
+        label: targetId,
+      });
+
+      const targetElement = document.getElementById(targetId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,16 +62,24 @@ const Header = () => {
             ${isScrolled ? "text-primary-800" : "text-white"}
             }`}
         >
-          <a href="#about-section" className="font-medium hover:text-primary-600">
+          <a
+            href="#about-section"
+            onClick={handleAnchorClick}
+            className="font-medium hover:text-primary-600"
+          >
             About
           </a>
-          <a href="#projects" className="font-medium hover:text-primary-600">
+          <a href="#projects" onClick={handleAnchorClick} className="font-medium hover:text-primary-600">
             Projects
           </a>
-          <a href="/resume.pdf" download="Marcus_Hudnell_Resume.pdf" className="font-medium hover:text-primary-600">
+          <a
+            href="/resume.pdf"
+            download="Marcus_Hudnell_Resume.pdf"
+            className="font-medium hover:text-primary-600"
+          >
             Resume
           </a>
-          <a href="#contact" className="font-medium hover:text-primary-600">
+          <a href="#contact" onClick={handleAnchorClick} className="font-medium hover:text-primary-600">
             Contact
           </a>
         </nav>
@@ -63,6 +90,7 @@ const Header = () => {
             <div className="flex flex-col px-4 pt-2 pb-4 space-y-1 bg-white">
               <a
                 href="#about"
+                onClick={handleAnchorClick}
                 className={`font-medium transition-colors ${
                   isScrolled
                     ? "hover:text-primary-600"
@@ -73,6 +101,7 @@ const Header = () => {
               </a>
               <a
                 href="#projects"
+                onClick={handleAnchorClick}
                 className={`font-medium transition-colors ${
                   isScrolled
                     ? "hover:text-primary-600"
@@ -83,6 +112,7 @@ const Header = () => {
               </a>
               <a
                 href="#contact"
+                onClick={handleAnchorClick}
                 className={`font-medium transition-colors ${
                   isScrolled
                     ? "hover:text-primary-600"
