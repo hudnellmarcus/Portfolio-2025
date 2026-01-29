@@ -25,7 +25,7 @@ const Footer = () => {
 
             {/* LinkedIn */}
             <a
-              href="https://linkedin.com/in/yourusername"
+              href="https://linkedin.com/in/marcus-hudnell"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-primary-400 transition-colors duration-300"
