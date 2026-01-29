@@ -46,7 +46,7 @@ const ProjectCard = ({
       >
         {/* Image Section */}
         <div className={`relative ${isEven ? "lg:order-1" : "lg:order-2"}`}>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-2xl group">
+          <div className="relative aspect-[16/9] overflow-hidden rounded-2xl shadow-2xl group">
             <img
               src={project.media.hero}
               alt={project.title}

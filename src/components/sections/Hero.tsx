@@ -19,11 +19,10 @@ const Hero = () => {
   }, []);
 
   const typedTexts = [
-    "Web Developer",
-    "UI/UX Designer",
-    "Problem Solver",
-    "Creative Thinker",
-    "Full-Stack Engineer",
+    "Software Engineer",
+    "Frontend Architecture",
+    "Backend Integration",
+    "Building for Scale",
   ];
 
   return (
@@ -49,9 +48,8 @@ const Hero = () => {
           />
         </div>
         <p className="text-xl text-white md:text-white/90 mb-10 max-w-2xl mx-auto">
-          I'm a passionate web developer with a love for creating beautiful and
-          engaging web experiences. I specialize in building responsive and
-          user-friendly websites using modern technologies.
+          Los Angeles–based software engineer focused on frontend architecture,
+          state management, and reliable backend integration.
         </p>
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <a

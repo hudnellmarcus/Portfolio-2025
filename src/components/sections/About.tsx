@@ -55,7 +55,9 @@ const About = () => {
                 {aboutContent.philosophy}
               </p>
 
-              <p className="text-lg text-gray-700">{aboutContent.background}</p>
+              <p className="text-lg mb-6 text-gray-700">{aboutContent.background}</p>
+
+              <p className="text-lg text-gray-700">{aboutContent.approach}</p>
             </div>
           </div>
           {/* Bottom Half tehnical skills */}
